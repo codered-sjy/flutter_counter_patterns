@@ -1,6 +1,6 @@
 # counter_patterns
 
-A new Flutter project.
+Counter using ValueNotifier. Using ValueListenableBuilder, rebuild can be restricted to just counter text widget compared to whole widget
 
 ## Getting Started
 
