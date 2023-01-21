@@ -29,12 +29,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+
+  final ValueNotifier<int> _notifier = ValueNotifier<int>(0);
 
   void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+    _notifier.value++;
   }
 
   @override
@@ -50,10 +49,12 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            ValueListenableBuilder(valueListenable: _notifier, builder: (context, value , child) {
+              return  Text(
+                '$value',
+                style: Theme.of(context).textTheme.headline4,
+              );
+            })
           ],
         ),
       ),
