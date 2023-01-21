@@ -1,6 +1,6 @@
 # counter_patterns
 
-A new Flutter project.
+The default flutter counter app made with different patterns
 
 ## Getting Started
 
