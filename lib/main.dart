@@ -1,4 +1,4 @@
-import 'package:counter_patterns/CounterController.dart';
+import 'package:counter_patterns/counter_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
