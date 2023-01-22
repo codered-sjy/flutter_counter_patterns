@@ -1,4 +1,6 @@
+import 'package:counter_patterns/CounterController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,13 +31,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  final CounterController _controller = Get.put(CounterController());
 
   @override
   Widget build(BuildContext context) {
@@ -50,15 +47,16 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
+            Obx(() => Text(
+              '${_controller.count}',
               style: Theme.of(context).textTheme.headline4,
-            ),
+            )),
+
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _controller.increment,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
