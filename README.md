@@ -1,6 +1,6 @@
 # counter_patterns
 
-A new Flutter project.
+Counter using Cubit
 
 ## Getting Started
 
